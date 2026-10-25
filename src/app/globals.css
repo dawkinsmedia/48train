@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-offwhite text-charcoal antialiased;
+  }
+
+  ::selection {
+    @apply bg-olive/30 text-charcoal;
+  }
+}
+
+@layer components {
+  .section-pad {
+    @apply py-16 sm:py-24;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
