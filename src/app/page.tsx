@@ -31,18 +31,19 @@ export default function HomePage() {
       <EventFactsBar />
 
       <main>
-        {/* Photos first — authenticity drives the story */}
         <section className="mx-auto max-w-content px-5 py-16 sm:px-8 sm:py-24">
-          <SectionHeading title="REAL MEN. REAL MORNINGS." />
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-charcoal/85">
-            These photos are from the first Saturdays—real guys, different ages and
-            fitness levels, showing up early, working hard, laughing, and
-            encouraging each other. No staging. Just the parking lot and the work.
+          <SectionHeading
+            eyebrow="FROM THE PARKING LOT"
+            title="REAL MEN. REAL MORNINGS."
+          />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal/85">
+            Unfiltered photos from the first Saturdays—not a shoot, just guys who
+            showed up before most of Conway was awake.
           </p>
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <PhotoGallery />
           </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
             <LinkButton href="#share" variant="accent" className="w-full sm:w-auto">
               INVITE A FRIEND
             </LinkButton>
@@ -63,8 +64,8 @@ export default function HomePage() {
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <figure className="relative order-2 aspect-[4/5] overflow-hidden rounded-sm bg-charcoal/5 shadow-lg sm:aspect-[5/4] lg:order-1 lg:aspect-[4/5]">
                 <Image
-                  src="/images/workout-plank-encouragement.jpg"
-                  alt="Men encouraging each other during a forearm plank in the parking lot"
+                  src="/images/workout-warmup-circle.jpg"
+                  alt="Men in a circle stretching and laughing before the workout in the parking lot"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
