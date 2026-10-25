@@ -127,12 +127,12 @@ export default function HomePage() {
             <SectionHeading invert title="TRAIN FOR MORE." />
             <blockquote className="mt-10 max-w-3xl border-l-2 border-olive pl-6">
               <p className="font-display text-2xl leading-snug tracking-wide sm:text-3xl">
-                &ldquo;For bodily exercise profiteth little: but godliness is
-                profitable unto all things, having promise of the life that now
-                is, and of that which is to come.&rdquo;
+                &ldquo;For while bodily training is of some value, godliness is
+                of value in every way, as it holds promise for the present life
+                and also for the life to come.&rdquo;
               </p>
               <footer className="mt-4 text-sm tracking-widest text-softgray">
-                — 1 TIMOTHY 4:8 (KJV)
+                — 1 TIMOTHY 4:8 (ESV)
               </footer>
             </blockquote>
             <div className="mt-10 max-w-2xl space-y-5 text-lg leading-relaxed text-offwhite/85">
