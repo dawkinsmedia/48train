@@ -77,7 +77,7 @@ export function Hero() {
           </LinkButton>
         </div>
         <p className="mt-10 font-display text-sm tracking-[0.18em] text-softgray sm:ml-5 md:ml-6">
-          HERITAGE PRESERVE · POOL PARKING LOT · FREE
+          HERITAGE PRESERVE · YELLOW DOT LN · POOL LOT
         </p>
       </div>
     </section>

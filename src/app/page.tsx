@@ -7,12 +7,17 @@ import { InterestForm } from "@/components/InterestForm";
 import { ShareSection } from "@/components/ShareSection";
 import { StickyCta } from "@/components/StickyCta";
 import { LinkButton } from "@/components/ui/Button";
-import { getSiteUrl, MAPS_SEARCH_URL } from "@/lib/site";
+import {
+  getSiteUrl,
+  MAPS_DIRECTIONS_URL,
+  MAPS_SEARCH_URL,
+  MEETING_SPOT,
+} from "@/lib/site";
 
 const steps = [
   {
     title: "SHOW UP",
-    body: "7 AM in the Heritage Preserve pool parking lot. Outdoors. No membership. No gym.",
+    body: `7 AM in the pool parking lot on ${MEETING_SPOT.street} (Heritage Preserve). Outdoors. No membership. No gym.`,
   },
   {
     title: "PUT IN THE WORK",
@@ -176,26 +181,54 @@ export default function HomePage() {
             <SectionHeading title="YOUR SATURDAY STARTS HERE." />
             <address className="mt-8 not-italic">
               <p className="font-display text-2xl tracking-wide text-charcoal">
-                Heritage Preserve
+                {MEETING_SPOT.neighborhood}
               </p>
-              <p className="mt-1 text-lg text-charcoal/85">Pool Parking Lot</p>
-              <p className="text-lg text-charcoal/85">Conway, South Carolina</p>
+              <p className="mt-1 text-lg text-charcoal/85">
+                Pool parking lot · {MEETING_SPOT.street}
+              </p>
+              <p className="text-lg text-charcoal/85">{MEETING_SPOT.city}</p>
+              <p className="mt-2 text-base text-charcoal/70">
+                {MEETING_SPOT.landmark}
+              </p>
               <p className="mt-4 font-display text-lg tracking-widest text-olive">
                 SATURDAYS · 7:00–8:00 AM · FREE
               </p>
             </address>
-            <p className="mt-8 max-w-xl text-charcoal/80">
-              Pull into the pool parking lot at Heritage Preserve. Tap below for
-              directions—search for Heritage Preserve in Conway.
+            <figure className="mt-8 max-w-lg overflow-hidden border border-charcoal/10 bg-white">
+              <Image
+                src="/images/meeting-spot-map.png"
+                alt="Map showing the workout meetup at the Heritage Preserve pool parking lot on Yellow Dot Lane, off US Highway 90"
+                width={640}
+                height={640}
+                className="h-auto w-full"
+              />
+              <figcaption className="border-t border-charcoal/10 px-4 py-3 text-sm text-charcoal/75">
+                We meet in the pool parking loop—same spot as the pin above.
+              </figcaption>
+            </figure>
+            <p className="mt-6 max-w-xl text-charcoal/80">
+              From US Hwy 90, take Long Leaf Pine Dr to Yellow Dot Ln and pull
+              into the pool parking lot. Tap below for turn-by-turn directions
+              to the exact pin.
             </p>
-            <a
-              href={MAPS_SEARCH_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex min-h-12 items-center font-display text-lg tracking-widest text-charcoal underline decoration-olive/50 underline-offset-4 hover:decoration-olive"
-            >
-              OPEN IN GOOGLE MAPS
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={MAPS_DIRECTIONS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center bg-charcoal px-6 font-display text-lg tracking-widest text-offwhite transition hover:bg-charcoal/90"
+              >
+                GET DIRECTIONS
+              </a>
+              <a
+                href={MAPS_SEARCH_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center font-display text-lg tracking-widest text-charcoal underline decoration-olive/50 underline-offset-4 hover:decoration-olive"
+              >
+                OPEN IN GOOGLE MAPS
+              </a>
+            </div>
             <div className="mt-12 border-l-4 border-accent bg-white p-6 shadow-sm sm:p-10">
               <p className="font-display text-2xl tracking-wide text-charcoal">
                 KNOW A GUY WHO SHOULD BE HERE?

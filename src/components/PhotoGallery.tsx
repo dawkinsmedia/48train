@@ -3,7 +3,7 @@ import Image from "next/image";
 const feature = {
   src: "/images/workout-lunges.jpg",
   alt: "Men of different ages in a kneeling lunge line on the asphalt, focused and working together",
-  label: "HERITAGE PRESERVE · 7 AM",
+  label: "YELLOW DOT LN · POOL LOT · 7 AM",
 } as const;
 
 const moments = [

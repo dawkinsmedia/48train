@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const SMS_TEMPLATE =
-  "Hey man—free men's workout every Saturday at 7 AM at Heritage Preserve in Conway. One hour, all levels, no gym. Come with me this Saturday.";
+  "Hey man—free men's workout every Saturday at 7 AM. Heritage Preserve pool parking lot on Yellow Dot Ln in Conway (off Hwy 90). One hour, all levels. Come with me this Saturday.";
 
 function normalizeShareUrl(url: string): string {
   const trimmed = url.trim().replace(/\/$/, "");
