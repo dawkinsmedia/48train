@@ -7,7 +7,7 @@ import { InterestForm } from "@/components/InterestForm";
 import { ShareSection } from "@/components/ShareSection";
 import { StickyCta } from "@/components/StickyCta";
 import { LinkButton } from "@/components/ui/Button";
-import { MAPS_SEARCH_URL } from "@/lib/site";
+import { getSiteUrl, MAPS_SEARCH_URL } from "@/lib/site";
 
 const steps = [
   {
@@ -204,7 +204,7 @@ export default function HomePage() {
                 link—it takes ten seconds.
               </p>
               <div className="mt-6">
-                <ShareSection />
+                <ShareSection shareUrl={getSiteUrl()} />
               </div>
             </div>
           </div>
