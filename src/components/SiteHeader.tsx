@@ -24,7 +24,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-3 sm:px-8 sm:py-4">
         <a
           href="#"
-          className={`font-display text-base tracking-[0.2em] transition-colors sm:text-lg ${
+          className={`min-w-0 truncate font-display text-sm tracking-[0.15em] transition-colors sm:text-lg sm:tracking-[0.2em] ${
             scrolled ? "text-charcoal" : "text-offwhite"
           }`}
         >
@@ -35,7 +35,7 @@ export function SiteHeader() {
           variant="accent"
           size="sm"
           showChevron={false}
-          className="shadow-md"
+          className="shrink-0 whitespace-nowrap px-3.5 text-sm tracking-wider shadow-md sm:px-5 sm:text-base sm:tracking-widest"
         >
           I&apos;M INTERESTED
         </LinkButton>
