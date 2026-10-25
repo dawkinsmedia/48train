@@ -58,13 +58,34 @@ The API response includes `ghlSynced: true` when the webhook succeeds. The succe
 - `npm run build` — production build
 - `npm run start` — run production build locally
 
+## Production (48train.com)
+
+- **GitHub:** https://github.com/dawkinsmedia/48train
+- **Vercel:** https://vercel.com/christ10/48train
+- **Production URL (after DNS):** https://48train.com
+- **Staging alias:** https://48train.vercel.app (team SSO may apply; custom domain is public)
+
+### GoDaddy DNS (required once)
+
+In GoDaddy → **48train.com** → **DNS**, remove parking A records, then add:
+
+| Type | Name | Value |
+|------|------|--------|
+| A | `@` | `216.150.1.1` |
+| A | `@` | `216.150.16.1` |
+| CNAME | `www` | `3eb9c0325a76190b.vercel-dns-016.com` |
+
+Or point nameservers to `ns1.vercel-dns.com` and `ns2.vercel-dns.com` and let Vercel manage DNS.
+
+After saving, verify: `npx vercel domains verify 48train.com`
+
+Production env vars on Vercel: `NEXT_PUBLIC_SITE_URL`, `LEAD_NOTIFICATION_EMAIL`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`.
+
 ## Deployment checklist
 
-- [ ] Set `NEXT_PUBLIC_SITE_URL` to the live domain
-- [ ] Set `RESEND_API_KEY` and `RESEND_FROM_EMAIL` so Ethan receives form emails
-- [ ] Set `GHL_WEBHOOK_URL` (optional; useful on serverless for CRM backup)
-- [ ] Confirm Google Maps search link opens the correct area for Heritage Preserve pool parking
-- [ ] Test interest form end-to-end on mobile
+- [x] Deploy to Vercel
+- [ ] Complete GoDaddy DNS (see above)
+- [ ] Test interest form on https://48train.com (email to Ethan)
 - [ ] Share a link and verify Open Graph preview (`/opengraph-image`)
 
 ## Photos
