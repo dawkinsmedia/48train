@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const SMS_TEMPLATE =
@@ -22,11 +22,6 @@ type ShareSectionProps = {
 
 export function ShareSection({ shareUrl: shareUrlProp }: ShareSectionProps) {
   const [copied, setCopied] = useState(false);
-  const [shareSupported, setShareSupported] = useState(false);
-
-  useEffect(() => {
-    setShareSupported(typeof navigator !== "undefined" && !!navigator.share);
-  }, []);
 
   const fullUrl = useMemo(() => {
     const fromProp = normalizeShareUrl(shareUrlProp);
@@ -73,32 +68,8 @@ export function ShareSection({ shareUrl: shareUrlProp }: ShareSectionProps) {
     }
   }, [pageUrl]);
 
-  const nativeShare = useCallback(async () => {
-    if (!navigator.share || !pageUrl) return;
-    try {
-      await navigator.share({
-        title: "Saturday mornings in Conway, SC",
-        text: SMS_TEMPLATE,
-        url: pageUrl,
-      });
-    } catch {
-      // user cancelled
-    }
-  }, [pageUrl]);
-
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      {shareSupported ? (
-        <Button
-          type="button"
-          variant="accent"
-          showChevron
-          onClick={nativeShare}
-          className="w-full sm:w-auto"
-        >
-          SHARE
-        </Button>
-      ) : null}
       <Button
         type="button"
         variant="ghost"
